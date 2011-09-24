@@ -1,6 +1,6 @@
 from django.shortcuts import render_to_response,redirect
-from urlizr.front.models import Urliz
-from urlizr.front.forms import UrlizForm
+from UrliZr.front.models import Urliz
+from UrliZr.front.forms import UrlizForm
 
 def translate(request, method, url):
   form = UrlizForm({'url': url})

@@ -1,8 +1,8 @@
 from django.shortcuts import render_to_response,redirect
 from django.views.decorators.csrf import csrf_protect
 from django.template import RequestContext
-from urlizr.front.forms import UrlizForm
-from urlizr.front.models import Urliz
+from UrliZr.front.forms import UrlizForm
+from UrliZr.front.models import Urliz
 
 @csrf_protect
 def home(request):

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.db import models
-from urlizr.front.functions import genUid
+from UrliZr.front.functions import genUid
 
 class Urliz(models.Model):
   url = models.URLField(unique=True, verify_exists=True)
