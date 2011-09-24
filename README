@@ -1,0 +1,4 @@
+First of all copy the settings.py file to local_settings.py
+Don't forget to fill database acces in this file
+The you can start the dev server by launching:
+$ python manage.py runserver
