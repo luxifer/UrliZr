@@ -1,6 +1,7 @@
 from django.shortcuts import render_to_response,redirect
 from UrliZr.front.models import Urliz
 from UrliZr.front.forms import UrlizForm
+from django.http import HttpResponseBadRequest
 
 def translate(request, method, url):
   form = UrlizForm({'url': url})
@@ -22,10 +23,7 @@ def translate(request, method, url):
       return redirect('xml', uid=u.uid)
 
     else:    
-      return render_to_response('api/translate.html', {
-        'method': method,
-        'url': url,
-      })
+      return HttpResponseBadRequest
 
 def raw(request, uid):
   return render_to_response('api/raw.tpl', {
