@@ -1,29 +1,46 @@
 from django.shortcuts import render_to_response,redirect
 from urlizr.front.models import Urliz
-from django.http import HttpResponse,Http404
-from django.core.exceptions import ValidationError
+from urlizr.front.forms import UrlizForm
 
 def translate(request, method, url):
-  u = Urliz()
-  u.url = url
-  try:
-    u.full_clean()
-  except ValidationError, e:
-    data = e.message_dict
-    raise Http404 #HttpResponse(data, mimetype='text/plain')
+  form = UrlizForm({'url': url})
+  
+  if form.is_valid():
+    if Urliz.objects.filter(url__exact=form.cleaned_data['url']).count() == 0:
+      u = Urliz(url=form.cleaned_data['url'])
+      u.save()
+    else:
+      u = Urliz.objects.get(url=form.cleaned_data['url'])
 
-  u.save()
+    if method == 'raw':
+      return redirect('raw', uid=u.uid)
 
-  if method == 'raw':
-    return redirect('raw', uid=u.uid)
-    
-  return render_to_response('api/translate.html', {
-    'method': method,
-    'url': url,
-    })
+    elif method == 'json':
+      return redirect('json', uid=u.uid)
+
+    elif method == 'xml':
+      return redirect('xml', uid=u.uid)
+
+    else:    
+      return render_to_response('api/translate.html', {
+        'method': method,
+        'url': url,
+      })
 
 def raw(request, uid):
-  return render_to_response('api/translate.html', {
-    'method':'raw',
+  return render_to_response('api/raw.tpl', {
     'url': uid,
-    })
+    'host': request.get_host()
+  }, mimetype='text/plain')
+
+def json(request, uid):
+  return render_to_response('api/json.tpl', {
+    'url': uid,
+    'host': request.get_host()
+  }, mimetype='text/json')
+
+def xml(request, uid):
+  return render_to_response('api/xml.tpl', {
+    'url': uid,
+    'host': request.get_host()
+  }, mimetype='text/xml')
