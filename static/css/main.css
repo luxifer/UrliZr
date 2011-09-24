@@ -1,0 +1,63 @@
+body {
+  background-color: #252525;
+  background-repeat: no-repeat;
+  color: white;
+  font-family: 'Merienda One', cursive;
+}
+
+#urliz {
+  width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+input {
+  padding: 5px;
+  font-size: 30px;
+  text-shadow: 0px 1px 0px black;
+  border-radius: 10px;
+  border: 10px solid #333333;
+  box-shadow: 0 0 5px black;
+  color: white;
+}
+
+input:focus {  
+  box-shadow: 0 0 5px red;
+}
+
+#id_url {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  background: -moz-linear-gradient(bottom,  #444444,  #222222);
+}
+
+#id_submit {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  background: #333333;
+}
+
+ul {
+  width: 100%;
+  border-radius: 5px;
+  padding: 5px;
+  list-style: none;
+  box-shadow: 0 0 5px black;
+}
+
+.errorlist {
+  border: 3px solid #680000;
+  background: #860000;
+}
+
+.result {
+  border: 3px solid #006800;
+  background: #008600;  
+}
+
+#head {
+  font-size: 160px;
+  text-shadow: 0 0 5px black;
+  text-align: center;
+  font-family: 'Love Ya Like A Sister', cursive;
+}
