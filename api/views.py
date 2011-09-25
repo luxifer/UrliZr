@@ -43,7 +43,7 @@ def translate(request, method, url):
       return HttpResponseBadRequest('Invalid request/method', mimetype='text/plain')
 
   else:
-    return HttpResponseBadRequest('Invalid URL', mimetype='text/plain')
+    return HttpResponseBadRequest(form, mimetype='text/plain')
 
 def raw(request, uid):
   return render_to_response('api/raw.tpl', {
