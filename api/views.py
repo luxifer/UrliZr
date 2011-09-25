@@ -19,10 +19,9 @@ from django.shortcuts import render_to_response,redirect
 from UrliZr.front.models import Urliz
 from UrliZr.front.forms import UrlizForm
 from django.http import HttpResponseBadRequest
-from urllib import quote
 
 def translate(request, method, url):
-  form = UrlizForm({'url': quote(url)})
+  form = UrlizForm({'url': url})
   
   if form.is_valid():
     if Urliz.objects.filter(url__exact=form.cleaned_data['url']).count() == 0:
