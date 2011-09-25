@@ -23,7 +23,10 @@ def translate(request, method, url):
       return redirect('xml', uid=u.uid)
 
     else:    
-      return HttpResponseBadRequest
+      return HttpResponseBadRequest('Invalid request/method')
+
+  else:
+    return HttpResponseBadRequest('Invalid URL')
 
 def raw(request, uid):
   return render_to_response('api/raw.tpl', {
