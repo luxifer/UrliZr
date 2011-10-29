@@ -29,7 +29,6 @@ def home(request):
     if form.is_valid():
       if Urliz.objects.filter(url__exact=form.cleaned_data['url']).count() == 0:
         u = Urliz(url=form.cleaned_data['url'])
-        u.hit = 0
         u.save()
       else:
         u = Urliz.objects.get(url=form.cleaned_data['url'])
