@@ -20,6 +20,7 @@ from django.views.decorators.csrf import csrf_protect
 from django.template import RequestContext
 from UrliZr.front.forms import UrlizForm
 from UrliZr.front.models import Urliz
+from django.db.models import F
 
 @csrf_protect
 def home(request):
@@ -28,6 +29,7 @@ def home(request):
     if form.is_valid():
       if Urliz.objects.filter(url__exact=form.cleaned_data['url']).count() == 0:
         u = Urliz(url=form.cleaned_data['url'])
+        u.hit = 0
         u.save()
       else:
         u = Urliz.objects.get(url=form.cleaned_data['url'])
@@ -42,7 +44,7 @@ def home(request):
 
 def translate(request, uid):
   u = Urliz.objects.get(uid=uid)
-  u.hit + u.hit + 1
+  u.hit = F('hit') + 1
   u.save()
   return redirect(u.url)
 

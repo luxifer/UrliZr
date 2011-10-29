@@ -29,8 +29,9 @@ class Urliz(models.Model):
     return self.uid
 
   def save(self, *args, **kwargs):
-    uid = genUid()
-    while Urliz.objects.filter(uid__exact=uid).count() > 0:
+    if self.uid is None:
       uid = genUid()
-    self.uid = uid
+      while Urliz.objects.filter(uid__exact=uid).count() > 0:
+        uid = genUid()
+      self.uid = uid
     super(Urliz, self).save(*args, **kwargs)
