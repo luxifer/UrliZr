@@ -42,6 +42,8 @@ def home(request):
 
 def translate(request, uid):
   u = Urliz.objects.get(uid=uid)
+  u.hit + u.hit + 1
+  u.save()
   return redirect(u.url)
 
 @csrf_protect

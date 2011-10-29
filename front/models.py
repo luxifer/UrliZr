@@ -23,7 +23,7 @@ class Urliz(models.Model):
   url = models.URLField(unique=True, verify_exists=True)
   uid = models.CharField(max_length=8, primary_key=True, unique=True)
   created_at = models.DateTimeField(auto_now_add=True)
-  hit = models.IntegerField(
+  hit = models.BigIntegerField()
   
   def __unicode__(self):
     return self.uid
