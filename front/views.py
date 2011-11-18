@@ -45,7 +45,9 @@ def translate(request, uid):
   u = Urliz.objects.get(uid=uid)
   u.hit = F('hit') + 1
   u.save()
-  return redirect(u.url)
+  return render_to_response('redirect.html', {
+    'url': u.url,
+  })
 
 @csrf_protect
 def show(request, uid):
