@@ -60,7 +60,7 @@ def json(request, uid):
   return render_to_response('api/json.tpl', {
     'url': uid,
     'host': request.get_host()
-  }, mimetype='text/json')
+  }, mimetype='application/json')
 
 def xml(request, uid):
   return render_to_response('api/xml.tpl', {
