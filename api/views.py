@@ -19,7 +19,9 @@ from django.shortcuts import render_to_response,redirect
 from UrliZr.front.models import Urliz
 from UrliZr.front.forms import UrlizForm
 from django.http import HttpResponseBadRequest
+from django.views.decorators.csrf import csrf_exempt
 
+@csrf_exempt
 def translate(request, method):
   if request.method == "POST":
     url = request.POST['url']
