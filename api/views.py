@@ -20,30 +20,33 @@ from UrliZr.front.models import Urliz
 from UrliZr.front.forms import UrlizForm
 from django.http import HttpResponseBadRequest
 
-def translate(request, method, url):
-  form = UrlizForm({'url': url})
-  
-  if form.is_valid():
-    if Urliz.objects.filter(url__exact=form.cleaned_data['url']).count() == 0:
-      u = Urliz(url=form.cleaned_data['url'])
-      u.save()
+def translate(request, method):
+  if request.method == "POST":
+    url = request.POST['url']
+    form = UrlizForm({'url': url})
+    if form.is_valid():
+      if Urliz.objects.filter(url__exact=form.cleaned_data['url']).count() == 0:
+        u = Urliz(url=form.cleaned_data['url'])
+        u.save()
+      else:
+        u = Urliz.objects.get(url=form.cleaned_data['url'])
+
+      if method == 'raw':
+        return redirect('raw', uid=u.uid)
+
+      elif method == 'json':
+        return redirect('json', uid=u.uid)
+
+      elif method == 'xml':
+        return redirect('xml', uid=u.uid)
+
+      else:    
+        return HttpResponseBadRequest('Invalid request/method', mimetype='text/plain')
+
     else:
-      u = Urliz.objects.get(url=form.cleaned_data['url'])
-
-    if method == 'raw':
-      return redirect('raw', uid=u.uid)
-
-    elif method == 'json':
-      return redirect('json', uid=u.uid)
-
-    elif method == 'xml':
-      return redirect('xml', uid=u.uid)
-
-    else:    
-      return HttpResponseBadRequest('Invalid request/method', mimetype='text/plain')
-
+      return HttpResponseBadRequest('Invalid URL', mimetype='text/plain')
   else:
-    return HttpResponseBadRequest('Invalid URL', mimetype='text/plain')
+    return HttpResponseBadRequest('Invalid parameters', mimetype='text/plain')
 
 def raw(request, uid):
   return render_to_response('api/raw.tpl', {
