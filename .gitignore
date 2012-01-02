@@ -3,4 +3,3 @@
 *.pyc
 local_settings.py
 django.wsgi
-robots.txt

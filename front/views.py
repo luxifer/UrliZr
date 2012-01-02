@@ -59,3 +59,6 @@ def show(request, uid):
     'url': url,
     'host': host,
   }, context_instance=RequestContext(request))
+
+def robots(request):
+  return render_to_response('robots.txt', mimetype='text/plain')
