@@ -16,6 +16,7 @@ along with UrliZr.  If not, see <http://www.gnu.org/licenses/>.
 """
 
 from django.conf.urls.defaults import patterns, include, url
+from django.vienw.generic import RedirectView
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -26,6 +27,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'urlizr.views.home', name='home'),
     url(r'^', include('UrliZr.front.urls')),
     url(r'^api/', include('UrliZr.api.urls')),
+    url(r'^favicon\.ico', RedirectView.as_view(url='/static/favicon.ico'), name='favicon')
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
