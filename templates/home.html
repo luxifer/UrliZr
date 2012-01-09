@@ -8,4 +8,11 @@
 </form>
 {% block urliz %}{% endblock urliz %}
 </div>
+<script type="text/javascript>">
+$('#id_url').click(function() {
+  if ($(this).val() == 'http://') {
+    $(this).val('');
+  }
+});
+</script>
 {% endblock content %}
