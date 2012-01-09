@@ -8,11 +8,13 @@
 </form>
 {% block urliz %}{% endblock urliz %}
 </div>
-<script type="text/javascript>">
-$('#id_url').click(function() {
-  if ($(this).val() == 'http://') {
-    $(this).val('');
-  }
+<script type="text/javascript">
+$(function() {
+  $('#id_url').focus(function() {
+    if ($(this).val() == "http://") {
+      $(this).val('');
+    }
+  });
 });
 </script>
 {% endblock content %}
