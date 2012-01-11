@@ -15,7 +15,7 @@ You should have received a copy of the GNU General Public License
 along with UrliZr.  If not, see <http://www.gnu.org/licenses/>.
 """
 
-from django.shortcuts import render_to_response,redirect
+from django.shortcuts import render_to_response,redirect,get_object_or_404
 from django.views.decorators.csrf import csrf_protect
 from django.template import RequestContext
 from UrliZr.front.forms import UrlizForm
@@ -42,7 +42,7 @@ def home(request):
   }, context_instance=RequestContext(request))
 
 def translate(request, uid):
-  u = Urliz.objects.get(uid=uid)
+  u = get_object_or_404(Urliz, uid=uid)
   u.hit = F('hit') + 1
   u.save()
   return render_to_response('redirect.html', {
@@ -52,7 +52,7 @@ def translate(request, uid):
 @csrf_protect
 def show(request, uid):
   form = UrlizForm()
-  url = Urliz.objects.get(uid=uid)
+  url = get_object_or_404(Urliz, uid=uid)
   host = request.get_host()
   return render_to_response('show.html', {
     'form': form,
