@@ -28,8 +28,14 @@ along with UrliZr.  If not, see <http://www.gnu.org/licenses/>.
     <script src="{{ STATIC_URL }}js/foundation.js"></script>
   </head>
   <body>
-  <div id="head">UrliZr</div>
+  <div class="container">
+    <div class="row">
+      <div class="twelve columns" id="head">UrliZr</div>
+    </div>
+    <div class="row">
     {% block content %}{% endblock content %}
+    </div>
+  </div>
 <!-- Piwik -->
 <script type="text/javascript">
 var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.luxifer.fr/" : "http://piwik.luxifer.fr/");
