@@ -1,20 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div id="urliz">
-<form action="{% url home %}" method="post">{% csrf_token %}
-<p>{{ form.url }}&nbsp;<input type="submit" value="Urliz" id="id_submit" /></p>
-<p>{{ form.url.errors }}</p>
+<div class="eight columns centered">
+<form action="{% url home %}" method="post" class="nice">{% csrf_token %}
+<div class="row">
+  <div class="six columns">
+    {{ form.url }}
+  <div class="two columns">
+    <input type="submit" value="Urliz" id="id_submit" />
+  </div>
+</div>
+<div class="row">
+  <div class="eight columns">
+    <p>{{ form.url.errors }}</p>
+  </div>
+</div>
 </form>
 {% block urliz %}{% endblock urliz %}
 </div>
-<script type="text/javascript">
-$(function() {
-  $('#id_url').focus(function() {
-    if ($(this).val() == "http://") {
-      $(this).val('');
-    }
-  });
-});
-</script>
 {% endblock content %}
