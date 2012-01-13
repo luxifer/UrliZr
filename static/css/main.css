@@ -22,14 +22,9 @@ body {
   font-family: 'Merienda One', cursive;
 }
 
-#urliz {
-  width: 600px;
-  margin: auto;
-  text-align: center;
-}
-
 input {
-  font-size: 30px;
+  font-size: 30px !important;
+  width:100% !important;
 }
 
 input:focus {  
@@ -54,11 +49,6 @@ background: -ms-linear-gradient(top,  #222222 0%,#444444 100%);
 background: linear-gradient(top,  #222222 0%,#444444 100%);
 
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222222', endColorstr='#444444',GradientType=0 );*/
-}
-
-#id_submit {
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
 }
 
 ul {
