@@ -13,6 +13,7 @@
 </div>
 <div class="row">
   <div class="twelve columns centered">
+    {% block urliz %}{% endblock urliz %}
     {% for error in form.url.errors %}
       <div class="alert-box error">
         {{ error|escape }}
@@ -22,6 +23,5 @@
   </div>
 </div>
 </form>
-{% block urliz %}{% endblock urliz %}
 </div>
 {% endblock content %}
