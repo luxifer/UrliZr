@@ -13,7 +13,12 @@
 </div>
 <div class="row">
   <div class="twelve columns centered">
-    <p>{{ form.url.errors }}</p>
+    {% for error in form.url.errors %}
+      <div class="alert-box error">
+        {{ error|escape }}
+        <a href="" class="close">&times;</a>
+      </div>
+    {% endfor %}
   </div>
 </div>
 </form>

@@ -39,11 +39,6 @@ ul {
   box-shadow: 0 0 5px black;
 }
 
-.errorlist {
-  border: 3px solid #680000;
-  background: #860000;
-}
-
 .result {
   border: 3px solid #006800;
   background: #008600;  
