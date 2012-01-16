@@ -18,7 +18,6 @@ along with UrliZr.  If not, see <http://www.gnu.org/licenses/>.
 body {
   background-color: #252525;
   background-repeat: no-repeat;
-  color: white;
   font-family: 'Merienda One', cursive;
 }
 
@@ -31,23 +30,15 @@ input:focus {
   box-shadow: 0 0 5px red;
 }
 
-ul {
-  width: 100%;
-  border-radius: 5px;
-  padding: 5px;
-  list-style: none;
-  box-shadow: 0 0 5px black;
-}
-
-.result {
-  border: 3px solid #006800;
-  background: #008600;  
-}
-
 #head {
   font-size: 160px;
   text-shadow: 0 0 5px black;
   text-align: center;
   font-family: 'Love Ya Like A Sister', cursive;
   line-height: 1em;
+  color: white;
+}
+
+.copyright {
+  text-align: center;
 }
