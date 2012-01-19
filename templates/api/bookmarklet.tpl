@@ -18,29 +18,33 @@ piwikTracker.enableLinkTracking();
 var url = "{{ location }}";
 var xhr; 
 var shortened;
-try {  xhr = new ActiveXObject('Msxml2.XMLHTTP');   }
-catch (e) 
-{
-    try {   xhr = new ActiveXObject('Microsoft.XMLHTTP'); }
-    catch (e2) 
-    {
-       try {  xhr = new XMLHttpRequest();  }
-       catch (e3) {  xhr = false;   }
-     }
+try {
+  xhr = new ActiveXObject('Msxml2.XMLHTTP');
+}
+catch (e) {
+  try {
+    xhr = new ActiveXObject('Microsoft.XMLHTTP');
+  }
+  catch (e2) {
+    try {
+      xhr = new XMLHttpRequest();
+    }
+    catch (e3) {
+      xhr = false;
+    }
+  }
 }
 
-xhr.onreadystatechange  = function() 
-{ 
-   if(xhr.readyState  == 4)
-   {
+xhr.onreadystatechange  = function() { 
+  if(xhr.readyState  == 4) {
     if(xhr.status  == 200) {
-        shortened = xhr.responseText; 
-        console.log(shortened);
-        }
-    else {
-        console.log('Error code ' + xhr.status);
-        }
+      shortened = xhr.responseText; 
+      window.open("https://twitter.com/share?url="+escape(shortened));
     }
+    else {
+      console.log('Error code ' + xhr.status);
+    }
+  }
 };
 
  xhr.open('POST', 'http://{{ host }}/api/translate/raw', true);
