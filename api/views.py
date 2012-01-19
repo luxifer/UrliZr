@@ -20,11 +20,13 @@ from UrliZr.front.models import Urliz
 from UrliZr.front.forms import UrlizForm
 from django.http import HttpResponseBadRequest
 from django.views.decorators.csrf import csrf_exempt
+from urllib import quote_plus
 
 @csrf_exempt
 def translate(request, method):
   if request.method == "POST":
     url = request.POST['url']
+    url= u''+url
     form = UrlizForm({'url': url})
     if form.is_valid():
       if Urliz.objects.filter(url__exact=form.cleaned_data['url']).count() == 0:
