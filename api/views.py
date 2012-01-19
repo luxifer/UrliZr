@@ -67,3 +67,9 @@ def xml(request, uid):
     'url': uid,
     'host': request.get_host()
   }, mimetype='text/xml')
+
+def bookmarklet(request, location):
+  return render_to_response('api/bookmarklet.tpl', {
+    'location': location,
+    'host': request.get_host()
+  })
