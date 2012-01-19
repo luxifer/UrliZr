@@ -15,7 +15,7 @@ piwikTracker.enableLinkTracking();
 </script><noscript><p><img src="http://piwik.luxifer.fr/piwik.php?idsite=1" style="border:0" alt="" /></p></noscript>
 <!-- End Piwik Tracking Code -->
 <script type="text/javascript">
-var location = "{{ location }}";
+var url = "{{ location }}";
 var xhr; 
 var shortened;
 try {  xhr = new ActiveXObject('Msxml2.XMLHTTP');   }
@@ -35,17 +35,17 @@ xhr.onreadystatechange  = function()
    {
     if(xhr.status  == 200) {
         shortened = xhr.responseText; 
-        alert(shortened);
+        console.log(shortened);
         }
     else {
-        alert('Error code ' + xhr.status);
+        console.log('Error code ' + xhr.status);
         }
     }
 };
 
  xhr.open('POST', 'http://{{ host }}/api/translate/raw', true);
  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');  
- xhr.send('url='+location);
+ xhr.send('url='+escape(url));
 </script>
 </body>
 </html>
