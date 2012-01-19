@@ -39,7 +39,7 @@ xhr.onreadystatechange  = function() {
   if(xhr.readyState  == 4) {
     if(xhr.status  == 200) {
       shortened = xhr.responseText; 
-      console.log("http://twitter.com/share?url="+escape(shortened));
+      window.location = "http://twitter.com/share?url="+escape(shortened);
     }
     else {
       console.log('Error code ' + xhr.status);
