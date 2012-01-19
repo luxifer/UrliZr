@@ -18,7 +18,7 @@ along with UrliZr.  If not, see <http://www.gnu.org/licenses/>.
 from django.conf.urls.defaults import patterns, include, url
 
 urlpatterns = patterns('UrliZr.api.views',
-  url(r'^bookmarklet/(?P<location>[a-zA-Z0-9:%\.\+\/\=\?]*)$', 'bookmarklet', name='bookmarklet'),
+  url(r'^bookmarklet/(?P<location>[a-zA-Z0-9:%\.\+\/\=\?\-]*)$', 'bookmarklet', name='bookmarklet'),
   url(r'^translate/(?P<method>(raw|xml|json))$', 'translate', name='translate'),
   url(r'^raw/(?P<uid>[a-zA-Z0-9]{8})/$', 'raw', name='raw'),
   url(r'^json/(?P<uid>[a-zA-Z0-9]{8})/$', 'json', name='json'),
