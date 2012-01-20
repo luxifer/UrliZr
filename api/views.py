@@ -20,7 +20,7 @@ from UrliZr.front.models import Urliz
 from UrliZr.front.forms import UrlizForm
 from django.http import HttpResponseBadRequest
 from django.views.decorators.csrf import csrf_exempt
-from urllib import quote_plus
+from base64 import b64decode
 
 @csrf_exempt
 def translate(request, method):
@@ -72,6 +72,6 @@ def xml(request, uid):
 
 def bookmarklet(request, location):
   return render_to_response('api/bookmarklet.tpl', {
-    'location': location,
+    'location': b64decode(location),
     'host': request.get_host()
   })
