@@ -15,12 +15,23 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with UrliZr.  If not, see <http://www.gnu.org/licenses/>.
 -->
-<html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
   <head>
     <title>UrliZr</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{ STATIC_URL }}css/foundation.css">
     <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" type="text/css" />
+    <!--[if lt IE 9]>
+  		<link rel="stylesheet" href="{{ STATIC_URL }}css/ie.css">
+	  <![endif]-->
+
+	  <!-- IE Fix for HTML5 Tags -->
+	  <!--[if lt IE 9]>
+		  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	  <![endif]-->
     <link href='http://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="/favicon.ico" />
