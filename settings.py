@@ -14,6 +14,9 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with UrliZr.  If not, see <http://www.gnu.org/licenses/>.
 """
+
+import os
+
 # Django settings for urlizr project.
 
 DEBUG = True
@@ -22,6 +25,8 @@ TEMPLATE_DEBUG = DEBUG
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
+
+CURPATH = os.path.abspath(os.curdir)
 
 MANAGERS = ADMINS
 
@@ -88,8 +93,9 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    ("css", "/home/luxifer/urlizr/static/css"),
-    ("js", "/home/luxifer/urlizr/static/js"),
+    ("css", CURPATH + "/static/css"),
+    ("js", CURPATH + "/static/js"),
+    ("images", CURPATH + "/static/images"),
 )
 
 # List of finder classes that know how to find static files in
@@ -118,13 +124,13 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'urlizr.urls'
+ROOT_URLCONF = 'UrliZr.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/home/luxifer/urlizr/templates'
+    CURPATH + '/templates'
 )
 
 INSTALLED_APPS = (
