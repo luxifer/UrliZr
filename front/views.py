@@ -42,6 +42,7 @@ def home(request):
     'form': form,
   }, context_instance=RequestContext(request))
 
+
 def translate(request, uid):
   u = get_object_or_404(Urliz, uid=uid)
   u.hit = F('hit') + 1
@@ -49,6 +50,7 @@ def translate(request, uid):
   return render_to_response('redirect.html', {
     'url': u.url,
   })
+
 
 @csrf_protect
 def show(request, uid):
@@ -60,6 +62,7 @@ def show(request, uid):
     'url': url,
     'host': host,
   }, context_instance=RequestContext(request))
+
 
 def robots(request):
   return render_to_response('robots.txt', mimetype='text/plain')
