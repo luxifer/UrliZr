@@ -9,6 +9,5 @@ install:
   - pip install https://github.com/dcramer/pyflakes/tarball/master
 before_script:
   - "pep8 --exclude=migrations --ignore=E501,E225,E111,E128,E121 front"
+  - "pep8 --exclude=migrations --ignore=E501,E225,E111,E128,E121 api"
   - pyflakes -x W front
-script:
-  - python manage.py test
