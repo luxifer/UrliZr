@@ -15,12 +15,13 @@ You should have received a copy of the GNU General Public License
 along with UrliZr.  If not, see <http://www.gnu.org/licenses/>.
 """
 
-from django.shortcuts import render_to_response,redirect
+from django.shortcuts import render_to_response, redirect
 from UrliZr.front.models import Urliz
 from UrliZr.front.forms import UrlizForm
 from django.http import HttpResponseBadRequest
 from django.views.decorators.csrf import csrf_exempt
 from base64 import b64decode
+
 
 @csrf_exempt
 def translate(request, method):
@@ -52,11 +53,13 @@ def translate(request, method):
   else:
     return HttpResponseBadRequest('Invalid parameters', mimetype='text/plain')
 
+
 def raw(request, uid):
   return render_to_response('api/raw.tpl', {
     'url': uid,
     'host': request.get_host()
   }, mimetype='text/plain')
+
 
 def json(request, uid):
   return render_to_response('api/json.tpl', {
@@ -64,11 +67,13 @@ def json(request, uid):
     'host': request.get_host()
   }, mimetype='application/json')
 
+
 def xml(request, uid):
   return render_to_response('api/xml.tpl', {
     'url': uid,
     'host': request.get_host()
   }, mimetype='text/xml')
+
 
 def bookmarklet(request, location):
   return render_to_response('api/bookmarklet.tpl', {
