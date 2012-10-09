@@ -34,7 +34,7 @@ def home(request):
       else:
         u = Urliz.objects.get(url=form.cleaned_data['url'])
       return redirect('show', uid=u.uid)
-  
+
   else:
     form = UrlizForm()
 
