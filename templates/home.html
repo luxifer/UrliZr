@@ -15,7 +15,7 @@
   <div class="twelve columns centered">
     {% block urliz %}{% endblock urliz %}
     {% for error in form.url.errors %}
-      <div class="alert-box error">
+      <div class="alert-box alert">
         {{ error|escape }}
         <a href="" class="close">&times;</a>
       </div>
