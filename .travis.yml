@@ -8,6 +8,6 @@ install:
   - pip install pep8 --use-mirrors
   - pip install https://github.com/dcramer/pyflakes/tarball/master
 before_script:
-  - "pep8 --exclude=migrations --ignore=E501,E225,E111,E128,E121 front"
-  - "pep8 --exclude=migrations --ignore=E501,E225,E111,E128,E121 api"
+  - "pep8 --exclude=migrations --ignore=E501,E225,E111,E128,E121,W291 front"
+  - "pep8 --exclude=migrations --ignore=E501,E225,E111,E128,E121,W291 api"
   - pyflakes -x W front
