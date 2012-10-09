@@ -17,6 +17,7 @@ along with UrliZr.  If not, see <http://www.gnu.org/licenses/>.
 
 from django.conf.urls.defaults import patterns, include, url
 
+
 urlpatterns = patterns('UrliZr.front.views',
     url(r'^$', 'home', name='home'),
     url(r'^translate/(?P<uid>[a-zA-Z0-9]{8})/$', 'show', name='show'),
