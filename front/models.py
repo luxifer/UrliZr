@@ -19,12 +19,13 @@ along with UrliZr.  If not, see <http://www.gnu.org/licenses/>.
 from django.db import models
 from UrliZr.front.functions import genUid
 
+
 class Urliz(models.Model):
   url = models.URLField(unique=True, verify_exists=True)
   uid = models.CharField(max_length=8, primary_key=True, unique=True)
   created_at = models.DateTimeField(auto_now_add=True)
   hit = models.BigIntegerField(default=0)
-  
+
   def __unicode__(self):
     return self.uid
 
