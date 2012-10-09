@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/luxifer/UrliZr.png)](http://travis-ci.org/luxifer/UrliZr)
+
 Installation
 ============
 
