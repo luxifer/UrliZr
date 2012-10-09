@@ -22,6 +22,7 @@ from UrliZr.front.forms import UrlizForm
 from UrliZr.front.models import Urliz
 from django.db.models import F
 
+
 @csrf_protect
 def home(request):
   if request.method == 'POST':
@@ -33,7 +34,7 @@ def home(request):
       else:
         u = Urliz.objects.get(url=form.cleaned_data['url'])
       return redirect('show', uid=u.uid)
-    
+  
   else:
     form = UrlizForm()
 
