@@ -9,3 +9,6 @@ install:
 before_script:
   - "pep8 --exclude=migrations --ignore=E501,E225,E111,E128,E121,W291 front"
   - "pep8 --exclude=migrations --ignore=E501,E225,E111,E128,E121,W291 api"
+  - "cp settings.py local_settings.py"
+script:
+  - python manage.py test
