@@ -41,4 +41,9 @@ input:focus {
 
 .copyright {
   text-align: center;
+  color: white;
+}
+
+#id_url {
+  height: 62px;
 }

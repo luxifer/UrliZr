@@ -2,13 +2,13 @@
 
 {% block content %}
 <div class="eight columns centered">
-<form action="{% url home %}" method="post" class="nice">{% csrf_token %}
+<form action="{% url home %}" method="post">{% csrf_token %}
 <div class="row">
   <div class="eight columns">
     {{ form.url }}
   </div>
   <div class="four columns">
-    <input type="submit" value="Urliz" class="nice radius black button" />
+    <input type="submit" value="Urliz" class="large radius button" />
   </div>
 </div>
 <div class="row">
