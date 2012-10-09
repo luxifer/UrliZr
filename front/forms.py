@@ -17,6 +17,6 @@ along with UrliZr.  If not, see <http://www.gnu.org/licenses/>.
 
 from django import forms
 
+
 class UrlizForm(forms.Form):
   url = forms.URLField(label='Website', widget=forms.TextInput(attrs={'class': 'input-text', 'placeholder': 'http://'}))
-
