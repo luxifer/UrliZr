@@ -89,7 +89,7 @@ STATICFILES_DIRS = (
     #("css", CURPATH + "/static/css"),
     #("js", CURPATH + "/static/js"),
     #("images", CURPATH + "/static/images"),
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'front', 'static'),
 )
 
 # List of finder classes that know how to find static files in
