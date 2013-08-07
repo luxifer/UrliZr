@@ -16,8 +16,8 @@ along with UrliZr.  If not, see <http://www.gnu.org/licenses/>.
 """
 
 from django.shortcuts import render_to_response, redirect
-from UrliZr.front.models import Urliz
-from UrliZr.front.forms import UrlizForm
+from urlizr.front.models import Urliz
+from urlizr.front.forms import UrlizForm
 from django.http import HttpResponseBadRequest
 from django.views.decorators.csrf import csrf_exempt
 from base64 import b64decode

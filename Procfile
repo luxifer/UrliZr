@@ -1,1 +1,1 @@
-web: gunicorn UrliZr.wsgi
+web: gunicorn urlizr.wsgi

@@ -18,8 +18,8 @@ along with UrliZr.  If not, see <http://www.gnu.org/licenses/>.
 from django.shortcuts import render_to_response, redirect, get_object_or_404
 from django.views.decorators.csrf import csrf_protect
 from django.template import RequestContext
-from UrliZr.front.forms import UrlizForm
-from UrliZr.front.models import Urliz
+from urlizr.front.forms import UrlizForm
+from urlizr.front.models import Urliz
 from django.db.models import F
 
 

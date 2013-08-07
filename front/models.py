@@ -17,7 +17,7 @@ along with UrliZr.  If not, see <http://www.gnu.org/licenses/>.
 """
 
 from django.db import models
-from UrliZr.front.functions import genUid
+from urlizr.front.functions import genUid
 
 
 class Urliz(models.Model):

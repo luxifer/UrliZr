@@ -26,8 +26,8 @@ from django.conf import settings
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'urlizr.views.home', name='home'),
-    url(r'^', include('UrliZr.front.urls')),
-    url(r'^api/', include('UrliZr.api.urls')),
+    url(r'^', include('urlizr.front.urls')),
+    url(r'^api/', include('urlizr.api.urls')),
     url(r'^favicon\.ico$', RedirectView.as_view(url='/static/images/favicon.ico'), name='favicon')
 
     # Uncomment the admin/doc line below to enable admin documentation:
