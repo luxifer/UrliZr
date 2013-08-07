@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="eight columns centered">
-<form action="{% url home %}" method="post">{% csrf_token %}
+<form action="{% url "home" %}" method="post">{% csrf_token %}
 <div class="row">
   <div class="eight columns">
     {{ form.url }}
