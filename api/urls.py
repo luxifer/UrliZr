@@ -15,7 +15,7 @@ You should have received a copy of the GNU General Public License
 along with UrliZr.  If not, see <http://www.gnu.org/licenses/>.
 """
 
-from django.conf.urls.defaults import patterns, include, url
+from django.conf.urls import patterns, include, url
 
 urlpatterns = patterns('UrliZr.api.views',
   url(r'^bookmarklet/(?P<location>[a-zA-Z0-9\+\/=]*)$', 'bookmarklet', name='bookmarklet'),

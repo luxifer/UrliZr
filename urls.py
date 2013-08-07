@@ -15,7 +15,7 @@ You should have received a copy of the GNU General Public License
 along with UrliZr.  If not, see <http://www.gnu.org/licenses/>.
 """
 
-from django.conf.urls.defaults import patterns, include, url
+from django.conf.urls import patterns, include, url
 from django.views.generic import RedirectView
 
 # Uncomment the next two lines to enable the admin:
