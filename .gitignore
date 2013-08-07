@@ -2,6 +2,5 @@
 *.pot
 *.pyc
 local_settings.py
-django.wsgi
 *~
 __env
