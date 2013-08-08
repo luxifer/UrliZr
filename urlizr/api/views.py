@@ -27,7 +27,7 @@ from base64 import b64decode
 def translate(request, method):
   if request.method == "POST":
     url = request.POST['url']
-    url= u''+url
+    url= u'' + url
     form = UrlizForm({'url': url})
     if form.is_valid():
       if Urliz.objects.filter(url__exact=form.cleaned_data['url']).count() == 0:
