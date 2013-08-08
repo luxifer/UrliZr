@@ -28,7 +28,6 @@ urlpatterns = patterns('',
     # url(r'^$', 'urlizr.views.home', name='home'),
     url(r'^', include('urlizr.front.urls')),
     url(r'^api/', include('urlizr.api.urls')),
-    url(r'^favicon\.ico$', RedirectView.as_view(url='/static/images/favicon.ico'), name='favicon')
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
