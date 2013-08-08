@@ -120,7 +120,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'UrliZr.urls'
+ROOT_URLCONF = 'urlizr.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -140,8 +140,8 @@ INSTALLED_APPS = (
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    'UrliZr.front',
-    'UrliZr.api',
+    'urlizr.front',
+    'urlizr.api',
 )
 
 # A sample logging configuration. The only tangible logging
