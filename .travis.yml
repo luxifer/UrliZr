@@ -1,10 +1,8 @@
 language: python
 python:
-  - "2.7"
-env:
-  - DJANGO_VERSION=1.4.1
+  - "2.7.4"
 install:
-  - pip install -q Django==$DJANGO_VERSION
+  - pip install -r requirements.txt
   - pip install pep8 --use-mirrors
 before_script:
   - "pep8 --exclude=migrations --ignore=E501,E225,E111,E128,E121,W291 urlizr"
