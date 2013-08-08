@@ -20,7 +20,7 @@ import dj_database_url
 
 # Django settings for urlizr project.
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
