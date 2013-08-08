@@ -6,11 +6,12 @@ Installation
 Settings.py
 -----------
 
-First of all copy the `settings.py` file to `local_settings.py`
-Don't forget to fill database acces in this file
 The you can start the dev server by launching:
-
-    $ python manage.py runserver
+    
+    $ pip install -r requirements.txt
+    $ export DATABASE_URL="sqlite:///something"
+    $ python manage.py syncdb
+    $ foreman start
 
 API
 ---
