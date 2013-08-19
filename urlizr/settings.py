@@ -24,7 +24,7 @@ DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Florent Viel', 'luxifer666@gmail.com'),
 )
 
 CURPATH = os.path.abspath(os.curdir)
