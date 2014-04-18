@@ -7,11 +7,13 @@ Settings.py
 -----------
 
 The you can start the dev server by launching:
-    
-    $ pip install -r requirements.txt
-    $ export DATABASE_URL="mysql://user:pass@host/db"
-    $ python manage.py syncdb
-    $ foreman start
+
+```bash
+pip install -r requirements.txt
+export DATABASE_URL="mysql://user:pass@host/db"
+python manage.py syncdb
+foreman start
+```
 
 API (WIP)
 ---------
