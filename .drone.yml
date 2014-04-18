@@ -1,0 +1,8 @@
+image: python2.7
+env:
+  - DATABASE_URL="sqlite:////db.sqlite"
+script:
+  - pip install -r requirements.txt
+  - pip install pep8 --use-mirrors
+  - "pep8 --exclude=migrations --ignore=E501,E225,E111,E128,E121,W291 urlizr"
+  - python manage.py test
