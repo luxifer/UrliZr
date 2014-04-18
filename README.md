@@ -1,4 +1,4 @@
-[![Build Status](https://secure.travis-ci.org/luxifer/UrliZr.png)](http://travis-ci.org/luxifer/UrliZr) [![Build Status](http://drone.luxiferapp.com/github.com/luxifer/UrliZr/status.svg?branch=master)](http://drone.luxiferapp.com/github.com/luxifer/UrliZr)
+[![Build Status](http://drone.luxiferapp.com/github.com/luxifer/UrliZr/status.svg?branch=master)](http://drone.luxiferapp.com/github.com/luxifer/UrliZr)
 
 Installation
 ============
